@@ -75,6 +75,6 @@ LoggedOutRedirect();
 <div id="finance_expenses_con" class="dialog" data-id="15"></div>
 <div id="finance_debts_con" class="dialog" data-id="16"></div>
 <div id="finance_settings_con" class="dialog" data-id="17"></div>
-
+<div id="finance_new_accounts_con" class="dialog" data-id="18"></div>
 
 <?php include 'includes/templates/footer.php';?>

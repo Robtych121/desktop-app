@@ -1,6 +1,6 @@
 <?php 
 
-function getAccounts(){
+function finance_getAccounts(){
     include 'includes/config/db_connection.php';
     $out ="";
 
@@ -31,6 +31,14 @@ function getAccounts(){
 	return $out;
 	exit();
 
+}
+
+function finance_createAccount($acc_name,$acc_description,$acc_currency){
+    include 'includes/config/db_connection.php';
+    $stmt = $conn->prepare('INSERT INTO accounts(name, description, currency) VALUES (?, ?, ?)');
+    $stmt -> bind_param('sss', $acc_name, $acc_description, $acc_currency);
+    $stmt -> execute();
+    $stmt -> close();
 }
 
 ?>
