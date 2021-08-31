@@ -26,12 +26,36 @@ LoggedOutRedirect();
 $("#newfinanceaccount_admin_btn").click(function(){
     $("#finance_new_accounts_con").load("finance_newaccount.php", function(responseTxt, statusTxt, xhr){});	
 });
+$(".editAccount_finance_btn").click(function(){
+    $("#editAccount_finance_con").load("finance_editaccount.php?faccid="+data_faccid+"", function(responseTxt, statusTxt, xhr){});	
+});
+
 $(".dialog_launcher").on("click", function() {
 	data_id = $(this).attr("data-id");
 	data_name = $(this).attr("data-name");
     $(".dialog[data-id='"+ data_id +"']").dialog("open").dialog('option', 'title', '' + data_name +'');
     if($("#openedModals").find(".taskbarbtn[data-id='"+ data_id +"']").length == 0){
         $('#openedModals').append('<button type="button" data-id="' + data_id + '" class="btn btn-secondary taskbarbtn">' + data_name + '</button>')
+    };
+});
+
+$(".editAccount_finance_btn").on("click", function() {
+	data_id = $(this).attr("data-id");
+	data_name = $(this).attr("data-name");
+    data_faccid = $(this).attr("data-faccid");
+    $(".dialog[data-id='"+ data_id +"']").dialog("open").dialog('option', 'title', '' + data_name +'').attr("data_faccid", data_faccid);
+    if($("#openedModals").find(".taskbarbtn[data-id='"+ data_id +"']").length == 0){
+    $('#openedModals').append('<button type="button" data-id="' + data_id + '" class="btn btn-secondary taskbarbtn">' + data_name + '</button>')
+    };
+});
+
+$(".deleteAccount_finance_btn").on("click", function() {
+	data_id = $(this).attr("data-id");
+	data_name = $(this).attr("data-name");
+    data_faccid = $(this).attr("data-faccid");
+    $(".dialog[data-id='"+ data_id +"']").dialog("open").dialog('option', 'title', '' + data_name +'').attr("data_faccid", data_faccid);
+    if($("#openedModals").find(".taskbarbtn[data-id='"+ data_id +"']").length == 0){
+    $('#openedModals').append('<button type="button" data-id="' + data_id + '" class="btn btn-secondary taskbarbtn">' + data_name + '</button>')
     };
 });
 </script>
