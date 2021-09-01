@@ -27,6 +27,7 @@ $("#newfinanceaccount_admin_btn").click(function(){
     $("#finance_new_accounts_con").load("finance_newaccount.php", function(responseTxt, statusTxt, xhr){});	
 });
 $(".editAccount_finance_btn").click(function(){
+    data_faccid = $(this).attr("data-faccid");
     $("#editAccount_finance_con").load("finance_editaccount.php?faccid="+data_faccid+"", function(responseTxt, statusTxt, xhr){});	
 });
 
