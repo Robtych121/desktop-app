@@ -61,4 +61,12 @@ function UpdateFinanceAccount($acc_name, $acc_description, $acc_currency, $edit_
     $stmt -> close();
 }
 
+function deleteFinanceAccount($finance_acc_id){
+    include 'includes/config/db_connection.php';
+    $stmt = $conn->prepare('DELETE FROM accounts WHERE id = ?');
+    $stmt -> bind_param('s', $finance_acc_id);
+    $stmt -> execute();
+    $stmt -> close();
+}
+
 ?>

@@ -30,6 +30,10 @@ $(".editAccount_finance_btn").click(function(){
     data_faccid = $(this).attr("data-faccid");
     $("#editAccount_finance_con").load("finance_editaccount.php?faccid="+data_faccid+"", function(responseTxt, statusTxt, xhr){});	
 });
+$(".deleteAccount_finance_btn").click(function(){
+    data_faccid = $(this).attr("data-faccid");
+    $("#deleteAccount_finance_con").load("finance_deleteaccount.php?faccid="+data_faccid+"", function(responseTxt, statusTxt, xhr){});	
+});
 
 $(".dialog_launcher").on("click", function() {
 	data_id = $(this).attr("data-id");
