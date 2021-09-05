@@ -69,4 +69,39 @@ function deleteFinanceAccount($finance_acc_id){
     $stmt -> close();
 }
 
+function finance_getPeriods(){
+    include 'includes/config/db_connection.php';
+    $out ="";
+
+	$stmt = $conn -> prepare("SELECT periodId, periodName, startDate, endDate, totalOut, totalIn, freeCash FROM periods");
+	$stmt -> execute();
+	$stmt -> bind_result($peridID, $periodName, $startDate, $endDate, $totalOut, $totalIn, $freeCash);
+
+	while($stmt -> fetch()){
+
+        $out .= "
+                <tr>
+                    <td>$peridID</td>
+                    <td>$periodName</td>
+                    <td>$startDate</td>
+                    <td>$endDate</td>
+                    <td>$totalOut</td>
+                    <td>$totalIn</td>
+                    <td>$freeCash</td>
+                ";
+        $out .= '<td>
+                    <div class="btn-group btn-group-sm"" role="group" aria-label="Basic example">
+                        <button type="button" data-faccid="'.$aid.'" data-id="19" data-name="Edit Account" class="editAccount_finance_btn btn btn-secondary"><i class="fas fa-user-edit"></i></button>
+                        <button type="button" data-faccid="'.$aid.'" data-id="20" data-name="Delete Account" class="deleteAccount_finance_btn btn btn-secondary"><i class="fas fa-trash-alt"></i></button>
+                    </div>
+                </td>';
+
+        $out .= "</tr>";
+	}
+
+	return $out;
+	exit();
+
+}
+
 ?>

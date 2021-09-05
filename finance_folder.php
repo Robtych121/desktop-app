@@ -72,6 +72,9 @@ include 'includes/init.php';
 $("#finance_accounts_btn").click(function(){
     $("#finance_accounts_con").load("finance_accounts.php", function(responseTxt, statusTxt, xhr){});	
 });
+$("#finance_periods_btn").click(function(){
+    $("#finance_periods_con").load("finance_periods.php", function(responseTxt, statusTxt, xhr){});	
+});
 $(".dialog_launcher").on("click", function() {
 	data_id = $(this).attr("data-id");
 	data_name = $(this).attr("data-name");

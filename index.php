@@ -78,5 +78,9 @@ LoggedOutRedirect();
 <div id="finance_new_accounts_con" class="dialog" data-id="18"></div>
 <div id="editAccount_finance_con" class="dialog" data-id="19"></div>
 <div id="deleteAccount_finance_con" class="dialog" data-id="20"></div>
+<div id="finance_new_periods_con" class="dialog" data-id="21"></div>
+<div id="finance_view_period_con" class="dialog" data-id="22"></div>
+<div id="editPeriod_finance_con" class="dialog" data-id="23"></div>
+<div id="deletePeriod_finance_con" class="dialog" data-id="24"></div>
 
 <?php include 'includes/templates/footer.php';?>
