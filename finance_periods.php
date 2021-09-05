@@ -24,3 +24,13 @@ LoggedOutRedirect();
             </tbody>
             </table>
 </div>
+<script>
+    $(".dialog_launcher").on("click", function() {
+	data_id = $(this).attr("data-id");
+	data_name = $(this).attr("data-name");
+    $(".dialog[data-id='"+ data_id +"']").dialog("open").dialog('option', 'title', '' + data_name +'');
+    if($("#openedModals").find(".taskbarbtn[data-id='"+ data_id +"']").length == 0){
+        $('#openedModals').append('<button type="button" data-id="' + data_id + '" class="btn btn-secondary taskbarbtn">' + data_name + '</button>')
+    };
+});
+</script>

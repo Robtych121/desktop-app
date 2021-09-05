@@ -91,8 +91,9 @@ function finance_getPeriods(){
                 ";
         $out .= '<td>
                     <div class="btn-group btn-group-sm"" role="group" aria-label="Basic example">
-                        <button type="button" data-faccid="'.$aid.'" data-id="19" data-name="Edit Account" class="editAccount_finance_btn btn btn-secondary"><i class="fas fa-user-edit"></i></button>
-                        <button type="button" data-faccid="'.$aid.'" data-id="20" data-name="Delete Account" class="deleteAccount_finance_btn btn btn-secondary"><i class="fas fa-trash-alt"></i></button>
+                        <button type="button" data-faccid="'.$aid.'" data-id="22" data-name="View Period" class="ViewPeriod_finance_btn btn btn-secondary"><i class="fas fa-user-edit"></i></button>    
+                        <button type="button" data-faccid="'.$aid.'" data-id="23" data-name="Edit Period" class="editPeriod_finance_btn btn btn-secondary"><i class="fas fa-user-edit"></i></button>
+                        <button type="button" data-faccid="'.$aid.'" data-id="24" data-name="Delete Period" class="deletePeriod_finance_btn btn btn-secondary"><i class="fas fa-trash-alt"></i></button>
                     </div>
                 </td>';
 
