@@ -25,6 +25,11 @@ LoggedOutRedirect();
             </table>
 </div>
 <script>
+    $("#newperiodaccount_admin_btn").click(function(){
+    $("#finance_new_periods_con").load("finance_newperiod.php", function(responseTxt, statusTxt, xhr){});	
+});
+
+
     $(".dialog_launcher").on("click", function() {
 	data_id = $(this).attr("data-id");
 	data_name = $(this).attr("data-name");

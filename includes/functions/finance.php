@@ -105,4 +105,12 @@ function finance_getPeriods(){
 
 }
 
+function finance_createpPeriod($per_name,$per_startdate,$per_enddate){
+    include 'includes/config/db_connection.php';
+    $stmt = $conn->prepare('INSERT INTO periods(periodName, startDate, endDate) VALUES (?, ?, ?)');
+    $stmt -> bind_param('sss', $per_name, $per_startdate, $per_enddate);
+    $stmt -> execute();
+    $stmt -> close();
+}
+
 ?>
