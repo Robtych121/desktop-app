@@ -38,4 +38,14 @@ LoggedOutRedirect();
         $('#openedModals').append('<button type="button" data-id="' + data_id + '" class="btn btn-secondary taskbarbtn">' + data_name + '</button>')
     };
 });
+
+$(".ViewPeriod_finance_btn").on("click", function() {
+	data_id = $(this).attr("data-id");
+	data_name = $(this).attr("data-name");
+    data_fperid = $(this).attr("data-fperid");
+    $(".dialog[data-id='"+ data_id +"']").dialog("open").dialog('option', 'title', '' + data_name +'').attr("data_fperid", data_fperid);
+    if($("#openedModals").find(".taskbarbtn[data-id='"+ data_id +"']").length == 0){
+    $('#openedModals').append('<button type="button" data-id="' + data_id + '" class="btn btn-secondary taskbarbtn">' + data_name + '</button>')
+    };
+});
 </script>
