@@ -11,7 +11,7 @@ LoggedOutRedirect();
                 <tr>
                     <th scope="col">ID</th>
                     <th scope="col">Name</th>
-                    <th scope="col">Start Dare</th>
+                    <th scope="col">Start Date</th>
                     <th scope="col">End Date</th>
                     <th scope="col">Out</th>
                     <th scope="col">In</th>
@@ -27,6 +27,11 @@ LoggedOutRedirect();
 <script>
     $("#newperiodaccount_admin_btn").click(function(){
     $("#finance_new_periods_con").load("finance_newperiod.php", function(responseTxt, statusTxt, xhr){});	
+});
+
+$(".ViewPeriod_finance_btn ").click(function(){
+    data_fperid = $(this).attr("data-fperid");
+    $("#finance_view_period_con").load("finance_viewperiod.php?fperid="+data_fperid+"", function(responseTxt, statusTxt, xhr){});	
 });
 
 

@@ -113,4 +113,21 @@ function finance_createpPeriod($per_name,$per_startdate,$per_enddate){
     $stmt -> close();
 }
 
+function getPeriodDetail($user_id){
+	include 'includes/config/db_connection.php';	
+	$stmt = $conn->prepare('SELECT periodName, startDate, endDate, startBalance, endBalance, totalIn, totalOut, freeCash, status FROM periods WHERE periodId = ?');
+    $stmt -> bind_param('i', $user_id);
+    $stmt -> execute();
+    $stmt -> bind_result($periodName, $startDate, $endDate, $startBalance, $endBalance, $totalIn, $totalOut, $freeCash, $status);
+	$result = $stmt->get_result();
+	$data = $result->fetch_array();
+	$stmt -> close();
+    return $data;
+}
+
+function updateTotalIn(){
+    include 'includes/config/db_connection.php';
+    
+}
+
 ?>
